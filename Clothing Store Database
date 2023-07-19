@@ -1,0 +1,24 @@
+-- Create a Clothing store database
+CREATE TABLE items_store (id INTEGER, item TEXT, in_stock INTEGER, price INTEGER, sold INTEGER);
+
+INSERT INTO items_store VALUES (1, "Formal Dress", 6, 20, 3);
+INSERT INTO items_store VALUES (2, "T-shirt", 10, 10, 6);
+INSERT INTO items_store VALUES (3, "Jeans", 4, 40, 3);
+INSERT INTO items_store VALUES (4, "Sundress", 2, 22, 4);
+INSERT INTO items_store VALUES (5, "Tops", 10, 6, 8);
+INSERT INTO items_store VALUES (6, "Sweater", 9, 30, 2);
+INSERT INTO items_store VALUES (7, "Skirt", 12, 15, 7);
+INSERT INTO items_store VALUES (8, "Shorts", 8, 12, 3);
+INSERT INTO items_store VALUES (9, "Pants", 6, 18, 2);
+INSERT INTO items_store VALUES (10, "Leegings", 4, 17, 6);
+INSERT INTO items_store VALUES (11, "Bikinis", 6, 20, 4);
+INSERT INTO items_store VALUES (12, "Jackets", 5, 25, 2);
+INSERT INTO items_store VALUES (13, "Jumpsuits", 4, 17, 1);
+INSERT INTO items_store VALUES (14, "Blouses", 8, 11, 3);
+INSERT INTO items_store VALUES (15, "Suits", 3, 22, 1);
+
+--Display database by price
+SELECT item,price FROM items_store ORDER BY price;
+
+-- Display database by in_stock quantity 
+SELECT item, in_stock FROM items_store ORDER BY in_stock
