@@ -1,0 +1,36 @@
+CREATE TABLE actors (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER, nationality TEXT);
+INSERT INTO actors (fullname, age, nationality) VALUES ("Nicole Kidman", 56, "Australia");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Anne Hathaway", 40, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Julie Andrews", 87, "England");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Meryl Streep", 74, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Angelina Jolie", 48, "USA");
+INSERT INTO actors (fullname, age, nationality) VALUES ("Jennifer Lawrence", 32, "USA");
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY AUTOINCREMENT, actors_id INTEGER, movie TEXT, year TEXT);
+INSERT INTO movies (actors_id, movie, year) VALUES (1, "The Others", "2001");
+INSERT INTO movies (actors_id, movie, year) VALUES (2, "Intern", "2015");
+INSERT INTO movies (actors_id, movie, year) VALUES (3, "The Princess Diaries", "2001");
+INSERT INTO movies (actors_id, movie, year) VALUES (4, "The Devil wears Prada", "2006");
+INSERT INTO movies (actors_id, movie, year) VALUES (5, "Tomb Raider", "2001");
+INSERT INTO movies (actors_id, movie, year) VALUES (6, "The Hunger Games", "2012");
+
+
+SELECT actors.fullname, movies.movie
+FROM actors
+JOIN movies
+ON actors.id = movies.actors_id;
+
+SELECT b.fullname, a.nationality 
+FROM actors b
+JOIN actors a
+ON b.id = a.id
+WHERE a.nationality = "USA";
+
+SELECT movie FROM movies WHERE year > 2010;
+
+SELECT * FROM actors, movies;
+
+SELECT *
+FROM actors
+INNER JOIN movies
+ON actors.id = movies.actors_id;
